@@ -6,9 +6,9 @@
 title: czp杂记
 subtitle: '可能是空的也说不定'
 description: '记录一些个人所想，以及cv一些可能会用到的知识'
-keywords:
+keywords: 没用的知识
 author: Zhipeng Chen
-language: zh
+language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -39,7 +39,7 @@ external_link:
   field: site # Apply to the whole site
   exclude: ''
 filename_case: 0
-render_drafts: false
+render_drafts: true
 post_asset_folder: false
 relative_link: false
 future: true
