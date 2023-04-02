@@ -6,6 +6,19 @@ tags:
 
 # Set up
 
+### **主题**
+
+**官方主题列表**
+
+- https://hexo.io/themes/
+- http://jekyllthemes.org/
+
+**感觉还不错的**
+
+- https://yunyoujun.github.io/
+
+### 一些问题
+
 **win 脚本执行**
 
 ```powershell
