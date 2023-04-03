@@ -17,6 +17,10 @@ tags:
 
 - https://yunyoujun.github.io/
 
+**其他配置**
+
+- 图标 https://fontawesome.com/icons
+
 ### 一些问题
 
 **win 脚本执行**

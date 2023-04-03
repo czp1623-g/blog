@@ -95,19 +95,23 @@ open_graph:
 # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
 # External url should start with http:// or https://
 menu:
-  #home: / || fa fa-home
-  #about: /about/ || fa fa-user
-  #tags: /tags/ || fa fa-tags
-  #categories: /categories/ || fa fa-th
-  #archives: /archives/ || fa fa-archive
-  #schedule: /schedule/ || fa fa-calendar
-  #sitemap: /sitemap.xml || fa fa-sitemap
-  #commonweal: /404/ || fa fa-heartbeat
+  home: / || fa fa-home
+  想法: /post/categories/post/ || fa fa-cloud-rain
+  笔记: /post/categories/cv/  || fa fa-paste
+  文章: /post/categories/trash/  || fa fa-trash
+  工作: /post/categories/work/  || fa fa-person-digging
+
+  # tags: /tags/ || fa fa-tags
+  # categories: /categories/ || fa fa-th
+  # archives: /archives/ || fa fa-archive
+  # schedule: /schedule/ || fa fa-calendar
+  # sitemap: /sitemap.xml || fa fa-sitemap
+  # commonweal: /404/ || fa fa-heartbeat
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
-  badges: false
+  badges: true
 
 
 # ---------------------------------------------------------------
@@ -117,8 +121,8 @@ menu_settings:
 
 sidebar:
   # Sidebar Position.
-  position: left
-  #position: right
+  # position: left
+  position: right
 
   # Manual define the sidebar width. If commented, will be default for:
   # Muse | Mist: 320
@@ -362,8 +366,8 @@ codeblock:
   # Code Highlight theme
   # All available themes: https://theme-next.js.org/highlight/
   theme:
-    light: default
-    dark: stackoverflow-dark
+    light: github-dark
+    dark: github-dark
   prism:
     light: prism
     dark: prism-dark
@@ -371,7 +375,7 @@ codeblock:
   copy_button:
     enable: true
     # Available values: default | flat | mac
-    style: default
+    style: mac
 
 back2top:
   enable: true
