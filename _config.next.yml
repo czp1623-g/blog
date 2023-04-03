@@ -96,10 +96,10 @@ open_graph:
 # External url should start with http:// or https://
 menu:
   home: / || fa fa-home
-  想法: /post/categories/post/ || fa fa-cloud-rain
-  笔记: /post/categories/cv/  || fa fa-paste
-  文章: /post/categories/trash/  || fa fa-trash
-  工作: /post/categories/work/  || fa fa-person-digging
+  想法: /categories/post/ || fa fa-cloud-rain
+  笔记: /categories/cv/  || fa fa-paste
+  文章: /categories/trash/  || fa fa-trash
+  工作: /categories/work/  || fa fa-person-digging
 
   # tags: /tags/ || fa fa-tags
   # categories: /categories/ || fa fa-th
