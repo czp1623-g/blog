@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"czp1623-g.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/blog/js/config.js"></script>
+
+    <meta name="description" content="做下自我介绍Grafanahttps:&#x2F;&#x2F;github.com&#x2F;grafana&#x2F;grafana The open-source platform for monitoring and observability  一个开源的数据可视化工具：将数据源中的数据转换成可视化图表 支持多种数据源，包括Prometheus、InfluxDB、Elasticsearch、MySQL等 另外就是Dashboar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="可观测性">
+<meta property="og:url" content="https://czp1623-g.github.io/blog/2023/04/03/work/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/index.html">
+<meta property="og:site_name" content="czp杂记">
+<meta property="og:description" content="做下自我介绍Grafanahttps:&#x2F;&#x2F;github.com&#x2F;grafana&#x2F;grafana The open-source platform for monitoring and observability  一个开源的数据可视化工具：将数据源中的数据转换成可视化图表 支持多种数据源，包括Prometheus、InfluxDB、Elasticsearch、MySQL等 另外就是Dashboar">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/imgimage-20230401092123696.png">
+<meta property="article:published_time" content="2023-04-03T15:08:08.000Z">
+<meta property="article:modified_time" content="2023-04-03T16:27:51.134Z">
+<meta property="article:author" content="Zhipeng Chen">
+<meta property="article:tag" content="可观测行">
+<meta property="article:tag" content="日志">
+<meta property="article:tag" content="云原生">
+<meta property="article:tag" content="grafana">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/imgimage-20230401092123696.png">
+
+
+<link rel="canonical" href="https://czp1623-g.github.io/blog/2023/04/03/work/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://czp1623-g.github.io/blog/2023/04/03/work/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/","path":"2023/04/03/work/可观测性/","title":"可观测性"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>可观测性 | czp杂记</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">czp杂记</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">一些乱七八糟的东西</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-想法"><a href="/blog/post/categories/post/" rel="section"><i class="fa fa-cloud-rain fa-fw"></i>想法</a></li><li class="menu-item menu-item-笔记"><a href="/blog/post/categories/cv/" rel="section"><i class="fa fa-paste fa-fw"></i>笔记</a></li><li class="menu-item menu-item-文章"><a href="/blog/post/categories/trash/" rel="section"><i class="fa fa-trash fa-fw"></i>文章</a></li><li class="menu-item menu-item-工作"><a href="/blog/post/categories/work/" rel="section"><i class="fa fa-person-digging fa-fw"></i>工作</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%81%9A%E4%B8%8B%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">做下自我介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Grafana"><span class="nav-number">1.1.</span> <span class="nav-text">Grafana</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loki-Grafana"><span class="nav-number">1.2.</span> <span class="nav-text">Loki - Grafana</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prometheus-CNCF"><span class="nav-number">1.3.</span> <span class="nav-text">Prometheus - CNCF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tempo-Grafana-CNCF"><span class="nav-number">1.4.</span> <span class="nav-text">Tempo - Grafana - CNCF</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">一些概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PromQL"><span class="nav-number">2.1.</span> <span class="nav-text">PromQL</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E6%9F%A5%E6%97%A5%E5%BF%97%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">怎么查日志？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%80%9D%E8%B7%AF"><span class="nav-number">3.1.</span> <span class="nav-text">查询思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.2.</span> <span class="nav-text">一些常用的语句</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Zhipeng Chen"
+      src="/blog/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Zhipeng Chen</p>
+  <div class="site-description" itemprop="description">活在当下</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/czp1623-g" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;czp1623-g" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/6342431530" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;6342431530" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://czp1623-g.github.io/blog/" title="https:&#x2F;&#x2F;czp1623-g.github.io&#x2F;blog&#x2F;">Title</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://czp1623-g.github.io/blog/2023/04/03/work/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.jpg">
+      <meta itemprop="name" content="Zhipeng Chen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="czp杂记">
+      <meta itemprop="description" content="活在当下">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="可观测性 | czp杂记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          可观测性<a href="https://github.com/czp1623-g/blog/tree/v1/source/_posts/work/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-04-03 23:08:08" itemprop="dateCreated datePublished" datetime="2023-04-03T23:08:08+08:00">2023-04-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-04-04 00:27:51" itemprop="dateModified" datetime="2023-04-04T00:27:51+08:00">2023-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/work/" itemprop="url" rel="index"><span itemprop="name">work</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="做下自我介绍"><a href="#做下自我介绍" class="headerlink" title="做下自我介绍"></a>做下自我介绍</h1><h2 id="Grafana"><a href="#Grafana" class="headerlink" title="Grafana"></a>Grafana</h2><p><a target="_blank" rel="noopener" href="https://github.com/grafana/grafana">https://github.com/grafana/grafana</a></p>
+<p>The open-source platform for monitoring and <strong>observability</strong></p>
+<ul>
+<li>一个开源的数据可视化工具：将数据源中的数据转换成可视化图表</li>
+<li>支持多种数据源，包括Prometheus、InfluxDB、Elasticsearch、MySQL等</li>
+<li>另外就是Dashboard、Alert</li>
+</ul>
+<h2 id="Loki-Grafana"><a href="#Loki-Grafana" class="headerlink" title="Loki - Grafana"></a>Loki - Grafana</h2><p><a target="_blank" rel="noopener" href="https://github.com/grafana/loki">https://github.com/grafana/loki</a></p>
+<p>Loki: like Prometheus, but for logs.</p>
+<ul>
+<li>开源，多租户，日志聚合系统</li>
+<li>受到Prometheus的启发</li>
+<li>LogQL（跟PromQL很像，不过多了日志流处理）</li>
+</ul>
+<h2 id="Prometheus-CNCF"><a href="#Prometheus-CNCF" class="headerlink" title="Prometheus - CNCF"></a>Prometheus - CNCF</h2><p><a target="_blank" rel="noopener" href="https://github.com/prometheus/prometheus">https://github.com/prometheus/prometheus</a></p>
+<p><a target="_blank" rel="noopener" href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs/introduction/overview/</a></p>
+<p><em>From metrics to insight</em></p>
+<p>Power your metrics and alerting with the leading<br>open-source monitoring solution.</p>
+<ul>
+<li>一个开源的完整监控解决方案</li>
+<li>PromQL</li>
+<li>2016年加入云原生计算基金会（CNCF），成为继Kubernetes之后的第二个托管项目</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/imgimage-20230401092123696.png" alt="image-20230401092123696"></p>
+<h2 id="Tempo-Grafana-CNCF"><a href="#Tempo-Grafana-CNCF" class="headerlink" title="Tempo - Grafana - CNCF"></a>Tempo - Grafana - CNCF</h2><p><a target="_blank" rel="noopener" href="https://github.com/grafana/tempo">https://github.com/grafana/tempo</a></p>
+<p>Grafana Tempo is an open source, easy-to-use and high-scale distributed tracing backend. </p>
+<ul>
+<li>trace</li>
+<li>TraceQL （受LogQL和PromQL的启发…）</li>
+</ul>
+<h1 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h1><h2 id="PromQL"><a href="#PromQL" class="headerlink" title="PromQL"></a>PromQL</h2><p>允许用户实时选择和汇聚时间序列数据。表达式的结果可以在浏览器中显示为图形，也可以显示为表格数据，或者由外部系统通过 <a target="_blank" rel="noopener" href="https://prometheus.io/docs/prometheus/latest/querying/api/">HTTP API</a> 调用。</p>
+<p>在 Prometheus 的表达式语言中，表达式或子表达式包括以下四种类型之一：</p>
+<ul>
+<li><strong>瞬时向量（Instant vector）</strong> - 一组时间序列，每个时间序列包含<strong>单个样本</strong>，它们共享相同的时间戳。也就是说，表达式的返回值中只会包含该时间序列中的最新的一个样本值。而相应的这样的表达式称之为<strong>瞬时向量表达式</strong>。</li>
+<li><strong>区间向量（Range vector）</strong> - 一组时间序列，每个时间序列包含一段时间范围内的样本数据。</li>
+<li><strong>标量（Scalar）</strong> - 一个浮点型的数据值。</li>
+<li><strong>字符串（String）</strong> - 一个简单的字符串值。</li>
+</ul>
+<p>其他说明</p>
+<ul>
+<li><p>Metric：指标</p>
+</li>
+<li><p>Label：标签</p>
+</li>
+<li><p>Time Series：时间序列</p>
+</li>
+<li><p>标量(scalar)： 普通值，如1，2，3</p>
+</li>
+<li><p>向量(vector)：一<strong>组</strong>时间序列数据，每<strong>个</strong>时间序列数据都有一个指标名称和一组键值对label</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">指标名称&#123;label&#125;</span><br><span class="line">http_requests_total&#123;method=&quot;GET&quot;, handler=&quot;/api/comments&quot;&#125; 100</span><br><span class="line">http_requests_total&#123;method=&quot;POST&quot;, handler=&quot;/api/comments&quot;&#125; 200</span><br><span class="line">http_requests_total&#123;method=&quot;GET&quot;, handler=&quot;/api/posts&quot;&#125; 300</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Function：接受一个或多个参数，并返回一个标量或向量</p>
+</li>
+<li><p>Range vector selector：选择一个时间范围内的所有时间序列</p>
+</li>
+<li><p>Instant vector selector：选择一个时间点上的所有时间序列</p>
+</li>
+</ul>
+<h1 id="怎么查日志？"><a href="#怎么查日志？" class="headerlink" title="怎么查日志？"></a>怎么查日志？</h1><p>诞生之旅：PromQL &gt;&gt; LogQL &gt;&gt; TraceQL</p>
+<p>PromQL文档：<a target="_blank" rel="noopener" href="https://prometheus.fuckcloudnative.io/di-san-zhang-prometheus/di-4-jie-cha-xun/basics">https://prometheus.fuckcloudnative.io/di-san-zhang-prometheus/di-4-jie-cha-xun/basics</a></p>
+<h2 id="查询思路"><a href="#查询思路" class="headerlink" title="查询思路"></a>查询思路</h2><h2 id="一些常用的语句"><a href="#一些常用的语句" class="headerlink" title="一些常用的语句"></a>一些常用的语句</h2>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E5%8F%AF%E8%A7%82%E6%B5%8B%E8%A1%8C/" rel="tag"># 可观测行</a>
+              <a href="/blog/tags/%E6%97%A5%E5%BF%97/" rel="tag"># 日志</a>
+              <a href="/blog/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/" rel="tag"># 云原生</a>
+              <a href="/blog/tags/grafana/" rel="tag"># grafana</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/2023/04/02/set-up/" rel="prev" title="Setup 相关">
+                  <i class="fa fa-chevron-left"></i> Setup 相关
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/2023/04/03/trash/2023%E5%B9%B44%E6%9C%883%E6%97%A5/" rel="next" title="差不多，今天">
+                  差不多，今天 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-feather"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhipeng Chen</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
