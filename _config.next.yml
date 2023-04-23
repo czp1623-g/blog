@@ -100,6 +100,7 @@ menu:
   笔记: /categories/cv/  || fa fa-paste
   文章: /categories/trash/  || fa fa-trash
   工作: /categories/work/  || fa fa-person-digging
+  摄影: /categories/photo/  || fa fa-camera-retro
 
   # tags: /tags/ || fa fa-tags
   # categories: /categories/ || fa fa-th
