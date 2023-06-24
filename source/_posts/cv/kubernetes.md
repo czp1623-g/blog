@@ -65,9 +65,19 @@ Kubernetes 会分步骤地将针对应用或其配置的更改上线，同时监
 
 无需更改上游源码即可扩展你的 Kubernetes 集群。
 
-
-
 # 一些实践
+
+## 常用命令
+
+```shell
+# start k3s server
+sudo nohup k3s server --docker &
+# kill all
+sh /usr/local/bin/k3s-killall.sh
+
+```
+
+
 
 ## wsl搭建k3s环境
 
@@ -118,7 +128,61 @@ docker run --name mynginx -p 8888:80 -d mynginx:v1
 
 
 
+# 遇到的一些问题
+
+## 找不到docker image
+
+咋回事呢，镜像名和tag都写错啊
+
+```shell
+302 ~/k3s  » k create -f deployment-demo.yaml
+deployment.apps/demo-deployment created
+306 ~/k3s  » k get pods
+NAME                              READY   STATUS         RESTARTS   AGE
+demo-deployment-fc474df9f-hcxfz   0/1     ErrImagePull   0          6s
+demo-deployment-fc474df9f-z9tbq   0/1     ErrImagePull   0          6s
+demo-deployment-fc474df9f-hzd6g   0/1     ErrImagePull   0          6s
+```
+
+### 指定仅从本地拉镜像，Failed
+
+```yaml
+ spec:
+  containers:
+  - name: <name>
+    image: <local-image-name>
+    imagePullPolicy: Never
+```
+
+```shell
+313 ~/k3s  » k get pods
+NAME                             READY   STATUS              RESTARTS   AGE
+demo-deployment-866496cd-whg25   0/1     ErrImageNeverPull   0          4s
+```
 
 
 
+### 指定docker镜像仓库，Success
+
+[根据我的搜索结果](https://blog.csdn.net/xs20691718/article/details/106515605)[1](https://bing.com/search?q=k3s+默认+镜像源)[2](https://blog.csdn.net/xs20691718/article/details/106515605)[，k3s 默认是使用 containerd 作为容器运行时，并从 docker.io 拉取镜像。](https://docs.k3s.io/zh/installation/private-registry)
+
+即启动k3s server时要这样子
+
+```shell
+# /usr/local/bin/k3s-killall.sh
+sudo k3s server --docker &
+```
+
+
+
+或直接指定
+
+```yaml
+# /etc/rancher/k3s/registries.yaml
+mirrors:
+  docker.io:
+    endpoint:
+      - "http://localhost:5000" # docker默认端口是5000
+
+```
 
