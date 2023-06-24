@@ -19,28 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"czp1623-g.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="活在当下">
+    <meta name="description" content="– WSL： Windows Subsystem for Linux 有问题，找AIGC~ 环境setup安装WSL安装 WSL | Microsoft Learn wsl –install -d 分发名（Ubuntu） ohmyzsh1.需先安装zsh 1sudo apt install zsh  2.安装ohmyzsh 1sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw">
 <meta property="og:type" content="article">
-<meta property="og:title" content="example">
-<meta property="og:url" content="https://czp1623-g.github.io/blog/2023/04/03/cv/example/index.html">
+<meta property="og:title" content="SetupWSL">
+<meta property="og:url" content="https://czp1623-g.github.io/blog/2023/06/23/cv/SetupWSL/index.html">
 <meta property="og:site_name" content="czp杂记">
-<meta property="og:description" content="活在当下">
+<meta property="og:description" content="– WSL： Windows Subsystem for Linux 有问题，找AIGC~ 环境setup安装WSL安装 WSL | Microsoft Learn wsl –install -d 分发名（Ubuntu） ohmyzsh1.需先安装zsh 1sudo apt install zsh  2.安装ohmyzsh 1sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-03T16:14:52.000Z">
-<meta property="article:modified_time" content="2023-04-23T14:13:05.181Z">
+<meta property="article:published_time" content="2023-06-23T04:56:52.000Z">
+<meta property="article:modified_time" content="2023-06-24T15:21:15.065Z">
 <meta property="article:author" content="Zhipeng Chen">
-<meta property="article:tag" content="没用的知识">
+<meta property="article:tag" content="wsl">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://czp1623-g.github.io/blog/2023/04/03/cv/example/">
+<link rel="canonical" href="https://czp1623-g.github.io/blog/2023/06/23/cv/SetupWSL/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://czp1623-g.github.io/blog/2023/04/03/cv/example/","path":"2023/04/03/cv/example/","title":"example"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://czp1623-g.github.io/blog/2023/06/23/cv/SetupWSL/","path":"2023/06/23/cv/SetupWSL/","title":"SetupWSL"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>example | czp杂记</title>
+<title>SetupWSL | czp杂记</title>
   
 
 
@@ -100,7 +101,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -113,6 +114,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83setup"><span class="nav-number">1.</span> <span class="nav-text">环境setup</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85WSL"><span class="nav-number">1.1.</span> <span class="nav-text">安装WSL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ohmyzsh"><span class="nav-number">1.2.</span> <span class="nav-text">ohmyzsh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker"><span class="nav-number">1.3.</span> <span class="nav-text">docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9E%E4%B8%AA%E5%88%86%E5%8F%91%E6%A8%A1%E6%9D%BF"><span class="nav-number">1.4.</span> <span class="nav-text">搞个分发模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#k3s"><span class="nav-number">1.5.</span> <span class="nav-text">k3s</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -127,7 +129,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -136,7 +138,7 @@
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -187,7 +189,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://czp1623-g.github.io/blog/2023/04/03/cv/example/">
+    <link itemprop="mainEntityOfPage" href="https://czp1623-g.github.io/blog/2023/06/23/cv/SetupWSL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.jpg">
@@ -200,12 +202,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="example | czp杂记">
+      <meta itemprop="name" content="SetupWSL | czp杂记">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          example<a href="https://github.com/czp1623-g/blog/tree/v1/source/_posts/cv/example.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          SetupWSL<a href="https://github.com/czp1623-g/blog/tree/v1/source/_posts/cv/SetupWSL.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
 
         <div class="post-meta-container">
@@ -216,14 +218,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-04-04 00:14:52" itemprop="dateCreated datePublished" datetime="2023-04-04T00:14:52+08:00">2023-04-04</time>
+      <time title="创建时间：2023-06-23 12:56:52" itemprop="dateCreated datePublished" datetime="2023-06-23T12:56:52+08:00">2023-06-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-23 22:13:05" itemprop="dateModified" datetime="2023-04-23T22:13:05+08:00">2023-04-23</time>
+      <time title="修改时间：2023-06-24 23:21:15" itemprop="dateModified" datetime="2023-06-24T23:21:15+08:00">2023-06-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -245,7 +247,53 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        
+        <p>–</p>
+<p>WSL： Windows Subsystem for Linux</p>
+<p>有问题，找AIGC~</p>
+<h1 id="环境setup"><a href="#环境setup" class="headerlink" title="环境setup"></a>环境setup</h1><h2 id="安装WSL"><a href="#安装WSL" class="headerlink" title="安装WSL"></a>安装WSL</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/wsl/install">安装 WSL | Microsoft Learn</a></p>
+<p>wsl –install -d 分发名（Ubuntu）</p>
+<h2 id="ohmyzsh"><a href="#ohmyzsh" class="headerlink" title="ohmyzsh"></a>ohmyzsh</h2><p>1.需先安装zsh</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install zsh</span><br></pre></td></tr></table></figure>
+
+<p>2.安装ohmyzsh</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>3.设置random~~</p>
+<p>编辑家目录下的 .zshrc 修改theme为random</p>
+<h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><p>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com -o get-docker.sh</span><br><span class="line">sudo sh get-docker.sh</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动</span></span><br><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
+
+<p>好的，前面安装了docker，但是只能加sudo来操作emm</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps</span><br></pre></td></tr></table></figure>
+
+<p>不过它为docker专门创建了一个用户组“docker”，可以将当前用户加进该用户组里</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">看看用户组</span></span><br><span class="line">cat /etc/group | grep docker</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">把当前用户（k8s）加入docker用户组</span></span><br><span class="line">sudo usermod -a -G docker k8s</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">验证用户组已经加入</span></span><br><span class="line">groups k8s</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重新进一下wsl，验证权限</span></span><br><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="搞个分发模板"><a href="#搞个分发模板" class="headerlink" title="搞个分发模板"></a>搞个分发模板</h2><p>导出分发</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --export Ubuntu  E:\WindowsSubsystemForLinux\导出的分发\uu</span><br></pre></td></tr></table></figure>
+
+<p>导入分发</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --import k8s E:\WindowsSubsystemForLinux\k8s E:\WindowsSubsystemForLinux\导出的分发\uu</span><br></pre></td></tr></table></figure>
+
+<p>导入后，默认用root登录，要手动切一下用户</p>
+<p>或者设置一下默认用户</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/wsl.conf</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">追加</span></span><br><span class="line">[user]</span><br><span class="line">default=k8s</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">重启一下该分发。注意假死状态</span></span><br><span class="line">wsl --shutdown k8s</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">验证一下~</span></span><br><span class="line">whoami</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="k3s"><a href="#k3s" class="headerlink" title="k3s"></a>k3s</h2><p><a target="_blank" rel="noopener" href="https://k3s.io/">https://k3s.io/</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -sfL https://rancher-mirror.rancher.cn/k3s/k3s-install.sh | INSTALL_K3S_MIRROR=cn sh -</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Check <span class="keyword">for</span> Ready node, takes ~30 seconds</span> </span><br><span class="line">sudo k3s kubectl get node </span><br></pre></td></tr></table></figure>
+
+<p>配置一下别名</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">.profile 淦，又是权限不足</span></span><br><span class="line">alias k=&quot;sudo kubectl&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
     </div>
 
     
@@ -253,18 +301,22 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/wsl/" rel="tag"># wsl</a>
+              <a href="/blog/tags/linux/" rel="tag"># linux</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/blog/2023/04/03/post/2023%E5%B9%B44%E6%9C%883%E6%97%A5/" rel="prev" title="差不多，今天">
-                  <i class="fa fa-chevron-left"></i> 差不多，今天
+                <a href="/blog/2023/04/23/photo/%E4%B8%80%E4%BA%9B%E7%AC%94%E8%AE%B0/" rel="prev" title="读书笔记">
+                  <i class="fa fa-chevron-left"></i> 读书笔记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blog/2023/04/05/post/2023%E5%B9%B44%E6%9C%885%E6%97%A5/" rel="next" title="2023年4月5日">
-                  2023年4月5日 <i class="fa fa-chevron-right"></i>
+                <a href="/blog/2023/06/24/hello-world/" rel="next" title="Hello World">
+                  Hello World <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

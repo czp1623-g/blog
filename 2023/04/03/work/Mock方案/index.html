@@ -19,28 +19,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"czp1623-g.github.io","root":"/blog/","images":"/blog/images","scheme":"Muse","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/blog/js/config.js"></script>
 
-    <meta name="description" content="心情：多云，微风 其实也不是因为有了一些深刻的思考而想要写这么个东西，而是想要思考一下才要写这么个东西。  工作时间大概是最近的工作生活比较枯燥，我突然觉得，自己好像一直在浪费时间，总是浪费时间在一些收益不大的支线任务上，有出于认真的态度的原因，抑或是自己的工作效率实在太低了。不过不管怎么样，时间就那么溜走了，看着不多的任务量，自己却搞得忙里忙外的，心里不太好受。尤其是看到隔壁同事在摸鱼时候。这">
+    <meta name="description" content="前言目前需要什么？ 一个mock服务器 – 方便前端、客户端、trd服务端、甚至是cp接入接口  约定俗成的api描述规范 – OpenApi就行  一个因地制宜的便捷的api文档维护方式 – 谁也不想写文档，要尽量减少编写、维护文档的成本  一致性测试，或者说接口集成测试 – 保证开发&amp;上线之间的一致性   https:&#x2F;&#x2F;microcks.io&#x2F;documentation&#x2F;using&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="思考一下时间安排">
-<meta property="og:url" content="https://czp1623-g.github.io/blog/2023/04/12/post/2023%E5%B9%B44%E6%9C%8812%E6%97%A5/index.html">
+<meta property="og:title" content="可观测性">
+<meta property="og:url" content="https://czp1623-g.github.io/blog/2023/04/03/work/Mock%E6%96%B9%E6%A1%88/index.html">
 <meta property="og:site_name" content="czp杂记">
-<meta property="og:description" content="心情：多云，微风 其实也不是因为有了一些深刻的思考而想要写这么个东西，而是想要思考一下才要写这么个东西。  工作时间大概是最近的工作生活比较枯燥，我突然觉得，自己好像一直在浪费时间，总是浪费时间在一些收益不大的支线任务上，有出于认真的态度的原因，抑或是自己的工作效率实在太低了。不过不管怎么样，时间就那么溜走了，看着不多的任务量，自己却搞得忙里忙外的，心里不太好受。尤其是看到隔壁同事在摸鱼时候。这">
+<meta property="og:description" content="前言目前需要什么？ 一个mock服务器 – 方便前端、客户端、trd服务端、甚至是cp接入接口  约定俗成的api描述规范 – OpenApi就行  一个因地制宜的便捷的api文档维护方式 – 谁也不想写文档，要尽量减少编写、维护文档的成本  一致性测试，或者说接口集成测试 – 保证开发&amp;上线之间的一致性   https:&#x2F;&#x2F;microcks.io&#x2F;documentation&#x2F;using&#x2F;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-12T14:49:00.000Z">
+<meta property="article:published_time" content="2023-04-03T15:08:08.000Z">
 <meta property="article:modified_time" content="2023-06-24T15:21:15.065Z">
 <meta property="article:author" content="Zhipeng Chen">
-<meta property="article:tag" content="没用的知识">
+<meta property="article:tag" content="可观测性">
+<meta property="article:tag" content="日志">
+<meta property="article:tag" content="云原生">
+<meta property="article:tag" content="grafana">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://czp1623-g.github.io/blog/2023/04/12/post/2023%E5%B9%B44%E6%9C%8812%E6%97%A5/">
+<link rel="canonical" href="https://czp1623-g.github.io/blog/2023/04/03/work/Mock%E6%96%B9%E6%A1%88/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://czp1623-g.github.io/blog/2023/04/12/post/2023%E5%B9%B44%E6%9C%8812%E6%97%A5/","path":"2023/04/12/post/2023年4月12日/","title":"思考一下时间安排"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://czp1623-g.github.io/blog/2023/04/03/work/Mock%E6%96%B9%E6%A1%88/","path":"2023/04/03/work/Mock方案/","title":"可观测性"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>思考一下时间安排 | czp杂记</title>
+<title>可观测性 | czp杂记</title>
   
 
 
@@ -113,7 +116,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%97%B6%E9%97%B4"><span class="nav-number">1.</span> <span class="nav-text">工作时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9D%A1%E7%9C%A0%E6%97%B6%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">睡眠时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E6%97%B6%E9%97%B4"><span class="nav-number">3.</span> <span class="nav-text">学习时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A8%B1%E4%B9%90%E6%97%B6%E9%97%B4"><span class="nav-number">4.</span> <span class="nav-text">娱乐时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E6%B3%84%E9%9C%B2"><span class="nav-number">5.</span> <span class="nav-text">时间泄露</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%89%8D%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">目前需要什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E8%BF%99%E4%BA%9B%E4%B8%9C%E8%A5%BF%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">为什么需要这些东西？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%89%8D%E6%9C%89%E4%BB%80%E4%B9%88%E7%8E%B0%E6%88%90%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">目前有什么现成的工具？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mock%E5%B7%A5%E5%85%B7"><span class="nav-number">1.3.1.</span> <span class="nav-text">mock工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-number">1.3.2.</span> <span class="nav-text">API文档管理工具</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">一些有意思的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%96%B9%E6%A1%88"><span class="nav-number">3.</span> <span class="nav-text">一些方案</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -188,7 +191,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://czp1623-g.github.io/blog/2023/04/12/post/2023%E5%B9%B44%E6%9C%8812%E6%97%A5/">
+    <link itemprop="mainEntityOfPage" href="https://czp1623-g.github.io/blog/2023/04/03/work/Mock%E6%96%B9%E6%A1%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.jpg">
@@ -201,12 +204,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="思考一下时间安排 | czp杂记">
+      <meta itemprop="name" content="可观测性 | czp杂记">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          思考一下时间安排<a href="https://github.com/czp1623-g/blog/tree/v1/source/_posts/post/2023%E5%B9%B44%E6%9C%8812%E6%97%A5.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          可观测性<a href="https://github.com/czp1623-g/blog/tree/v1/source/_posts/work/Mock%E6%96%B9%E6%A1%88.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
 
         <div class="post-meta-container">
@@ -217,7 +220,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-04-12 22:49:00" itemprop="dateCreated datePublished" datetime="2023-04-12T22:49:00+08:00">2023-04-12</time>
+      <time title="创建时间：2023-04-03 23:08:08" itemprop="dateCreated datePublished" datetime="2023-04-03T23:08:08+08:00">2023-04-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -232,7 +235,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/blog/categories/post/" itemprop="url" rel="index"><span itemprop="name">post</span></a>
+          <a href="/blog/categories/work/" itemprop="url" rel="index"><span itemprop="name">work</span></a>
         </span>
     </span>
 
@@ -246,23 +249,53 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <hr>
-<p>心情：多云，微风</p>
-<p><em>其实也不是因为有了一些深刻的思考而想要写这么个东西，而是想要思考一下才要写这么个东西。</em></p>
-<hr>
-<h2 id="工作时间"><a href="#工作时间" class="headerlink" title="工作时间"></a>工作时间</h2><p>大概是最近的工作生活比较枯燥，我突然觉得，自己好像一直在浪费时间，总是浪费时间在一些收益不大的支线任务上，有出于认真的态度的原因，抑或是自己的工作效率实在太低了。不过不管怎么样，时间就那么溜走了，看着不多的任务量，自己却搞得忙里忙外的，心里不太好受。尤其是看到隔壁同事在摸鱼时候。这种工作是带不来什么进步的，至少目前来说是这样子。做得不尽人意，也是可以过关的，至少看别人是这样子。没完成工作，银行卡也是会到账工资的…</p>
-<p>所以我有了个想法：对于工作任务，首要是追求效率，然后是质量，把时间节省下来去做自己的事情才是大方向。再过个几十年，回头看，我也只是个互联网搬砖民工而已——用时间和cv脑力劳动来换取薪水。会敲那么几行代码，还真不是设计师，至少我不是。</p>
-<p>另外还有一个，该加班就加班，不该加班也可以加班，加班单该提就提，”别给公司省钱”，难得企业是遵守劳动法的，有加班费为啥不多拿点，又没人卡你。真想不明白自己不好意思提加班单是种什么心理，是觉得钱拿多了会被赶走吗？赶走就赶走呗，N+1不舒服吗..</p>
-<h2 id="睡眠时间"><a href="#睡眠时间" class="headerlink" title="睡眠时间"></a>睡眠时间</h2><p>睡眠时间真的超级重要（虽然我把它放在第二位…），睡不好，精神状态就不好，心情也不好，从而办事效率也不好，进而办事效果也不好，最终啥啥都不好。</p>
-<p>所以，要睡好好。</p>
-<p>晚上睡眠要在6~8小时以内，午间休息0.5小时以内。</p>
-<p>不能熬夜到凌晨，不能嗜睡到9、10点。</p>
-<p>就这样。</p>
-<h2 id="学习时间"><a href="#学习时间" class="headerlink" title="学习时间"></a>学习时间</h2><p>最近不怎么学习。</p>
-<p>所以，0 hour。</p>
-<h2 id="娱乐时间"><a href="#娱乐时间" class="headerlink" title="娱乐时间"></a>娱乐时间</h2><p>拉满！！！！</p>
-<h2 id="时间泄露"><a href="#时间泄露" class="headerlink" title="时间泄露"></a>时间泄露</h2><p>拍拖有个比较烦的点，我感觉少了好多私人空间，有时候也会因为作息时间要强制同步，这引发不少矛盾。在处理矛盾的过程中，时间就这么泄露了。每次闹矛盾，我都会想，我不能成家，不然这些琐碎的、无益的东西，迟早要把我弄疯掉的。</p>
-<p>准备刷牙睡觉。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="目前需要什么？"><a href="#目前需要什么？" class="headerlink" title="目前需要什么？"></a>目前需要什么？</h2><ul>
+<li><p>一个mock服务器 – 方便前端、客户端、trd服务端、甚至是cp接入接口</p>
+</li>
+<li><p>约定俗成的api描述规范 – OpenApi就行</p>
+</li>
+<li><p>一个因地制宜的便捷的api文档维护方式 – 谁也不想写文档，要尽量减少编写、维护文档的成本</p>
+</li>
+<li><p>一致性测试，或者说接口集成测试 – 保证开发&amp;上线之间的一致性</p>
+<p>  <a target="_blank" rel="noopener" href="https://microcks.io/documentation/using/tests/">https://microcks.io/documentation/using/tests/</a></p>
+</li>
+</ul>
+<h2 id="为什么需要这些东西？"><a href="#为什么需要这些东西？" class="headerlink" title="为什么需要这些东西？"></a>为什么需要这些东西？</h2><ul>
+<li>是前后端沟通的媒介，也是个留档</li>
+<li>方便前后端并行开发</li>
+<li>方便进行一致性校验，如搞个actions测接口</li>
+<li>给客户端一些接口mock支持</li>
+<li>给cp一些接口mock支持</li>
+</ul>
+<h2 id="目前有什么现成的工具？"><a href="#目前有什么现成的工具？" class="headerlink" title="目前有什么现成的工具？"></a>目前有什么现成的工具？</h2><h3 id="mock工具"><a href="#mock工具" class="headerlink" title="mock工具"></a>mock工具</h3><ul>
+<li><p>wiremock：一个开源的测试工具，支持HTTP响应存根、请求验证、代理&#x2F;拦截、记录和回放</p>
+</li>
+<li><p>PowerMock</p>
+</li>
+<li><p>TestableMock：2020 年 12 月开始开源，出自阿里云云效团队，主要想解决 Java 开发者在日常单元测试中经常遇到的痛点</p>
+<p>  <a target="_blank" rel="noopener" href="https://github.com/alibaba/testable-mock">https://github.com/alibaba/testable-mock</a></p>
+</li>
+</ul>
+<h3 id="API文档管理工具"><a href="#API文档管理工具" class="headerlink" title="API文档管理工具"></a>API文档管理工具</h3><p>注：swagger 和 YApi 可以相互辅助，利用 swagger 生成API文档元数据，再通过 YApi 进行集中管理</p>
+<p>如果觉得不够方便，还可以自己打造一个<strong>中央文档系统</strong>，笔者的前东家唯品会就是这么做的，开发使用一条命令就可以生成API元数据并上传到中央文档系统中，使用更便捷。</p>
+<ul>
+<li><p>swagger：丝袜哥~，是一套基于 OpenAPI 规范构建的开源工具</p>
+<p>  <a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1644063">https://cloud.tencent.com/developer/article/1644063</a></p>
+</li>
+<li><p>YApi：集中式文档管理工具</p>
+</li>
+</ul>
+<h1 id="一些有意思的问题"><a href="#一些有意思的问题" class="headerlink" title="一些有意思的问题"></a>一些有意思的问题</h1><ol>
+<li>如何方便地从spring的controller里提取出接口，并且以OAS描述？</li>
+<li>要搞自己的mock服务器么？这样子会增加运维成本哟</li>
+</ol>
+<h1 id="一些方案"><a href="#一些方案" class="headerlink" title="一些方案"></a>一些方案</h1><p>1、分段式设计</p>
+<p>各个段落应该保持独立，交流方式是固定的，合作伙伴是可变的</p>
+<p>业务代码 → 单元测试 → OAS数据 → 数据中转平台 → 文档集中管理（权限管理） → mock服务器（权限管理） → 一致性测试（actions CI&#x2F;CD）</p>
+<p>可以写一套sdk，利用注解+反射实现OAS数据生成，其中可以用URL识别接口，以Hash值作为版本判断依据。</p>
+<p>2、Apifox – 一个我需要的平台，但是它丫的不开源，要收钱</p>
+<p>它的定位：Apifox &#x3D; Postman + Swagger + Mock + JMeter</p>
+<p>接口文档和接口开发调试使用同一个工具</p>
 
     </div>
 
@@ -271,18 +304,24 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/" rel="tag"># 可观测性</a>
+              <a href="/blog/tags/%E6%97%A5%E5%BF%97/" rel="tag"># 日志</a>
+              <a href="/blog/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/" rel="tag"># 云原生</a>
+              <a href="/blog/tags/grafana/" rel="tag"># grafana</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/blog/2023/04/05/post/2023%E5%B9%B44%E6%9C%885%E6%97%A5/" rel="prev" title="2023年4月5日">
-                  <i class="fa fa-chevron-left"></i> 2023年4月5日
+                <a href="/blog/2023/04/03/work/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/" rel="prev" title="可观测性">
+                  <i class="fa fa-chevron-left"></i> 可观测性
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blog/2023/04/23/photo/LR%E8%B0%83%E8%89%B2/" rel="next" title="LR调色">
-                  LR调色 <i class="fa fa-chevron-right"></i>
+                <a href="/blog/2023/04/03/trash/2023%E5%B9%B44%E6%9C%883%E6%97%A5/" rel="next" title="差不多，今天">
+                  差不多，今天 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
