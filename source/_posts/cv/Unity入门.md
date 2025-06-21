@@ -23,9 +23,18 @@ Unity官方有不少免费教程（或者收费教程也有），这里我将学
 
 <img src="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/843fc84b-ee81-447d-9155-b26c8aadb2c7______________27.png.400x0x1.webp" alt="img" />
 
+
+
+## 专有名词
+
+- Texture Type：纹理类型，比如Sprite(2D and UI)就是一种纹理类型
+- Sprite：精灵，通常是一张图片经由Unity处理后得到的一个可绘制的对象
+
+
+
 ## 主要组成
 
-**编辑器**
+### 编辑器
 
 - Scene：实时的场景编辑器，支持拖拉拽。
 - Hierarchy：与Scene联动，它将Scene中的所有游戏对象以目录树方式展现出来。
@@ -33,4 +42,62 @@ Unity官方有不少免费教程（或者收费教程也有），这里我将学
 - Console：看运行日志的地方。
 - Game：可以理解为预览，玩家视角。
 - Inspector：管理游戏对象、Resource等的属性的面板。
-- Animator
+- Animator：在这里编排动画
+
+
+
+### Sprite
+
+**精灵**是在游戏中绘制的图像。**Unity** 无法使用你直接为 Ruby 导入的 **.png 图像文件**，而是需要将此文件转换为可使用的格式。
+
+![image-20250621105418651](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250621105418651.png)
+
+精灵可以选择sprite mode，用single或者multiple（还有个polygon不知道是啥），选multiple的时候可以在Sprite Editor中自由裁剪图像而产生多个sprite
+
+
+
+### Input Manager
+
+Unity帮忙封装了一下input，将键盘、鼠标、手柄等设备输入的信号封装成可以直接使用的UnityEngine.lnput对象。
+
+核心概念：
+
+1. 输入轴(Input Axes)
+
+    将物理输入（如键盘按键、手柄摇杆）映射为逻辑上的“轴”，输出一个 **[-1, 1] 范围内的值**，渐进的
+
+2. 输入类型
+
+    按键 Key：键盘上的物理键，比如空格键、shift键
+
+    按钮 Button：手柄、触摸屏上的按键
+
+    鼠标/摇杆轴 Mouse/：连续输入
+
+
+
+![image-20250621163926416](E:\个人\卷起来\工作再学习\blog\blog\source\_posts\cv\Unity入门.assets\image-20250621163926416.png)
+
+
+
+### Tilemaps - 瓦片地图
+
+世界设计。**瓦片地图**将世界作为一个网格，你可以在其中为每个网格单元格设置不同的**精灵**。
+
+![image-20250621224357244](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250621224357244.png)
+
+## C#
+
+跟Java很类似，都是面向对象编程。
+
+### controller
+
+UnityEngine
+
+- transform：对应游戏对象的Transform组件，可以控制对象的位置
+
+MonoBehaviour
+
+- Start()：仅在首次调用Update方法前调用，是异步的吗？会不会出现Start跟Update一起执行的情况？
+- Update()：每一帧都会调用
+
