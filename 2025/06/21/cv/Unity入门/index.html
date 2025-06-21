@@ -27,8 +27,11 @@
 <meta property="og:description" content="前言做此笔记，记录一下Unity的学习过程，也算是一种变相的监督。 Unity简介一个跨平台的游戏引擎，使用C#编写游戏逻辑，内置物理引擎（碰撞、刚体、布料）。 资金或年收入20w美金以下的开发者（企业）使用personal版本是免费的。 竞品有最近比较火热的开源引擎Godot。 Unity官方有不少免费教程（或者收费教程也有），这里我将学这个入门 Ruby’s Adventure：2D 初学者">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/843fc84b-ee81-447d-9155-b26c8aadb2c7______________27.png.400x0x1.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250621105418651.png">
+<meta property="og:image" content="e:\%E4%B8%AA%E4%BA%BA\%E5%8D%B7%E8%B5%B7%E6%9D%A5\%E5%B7%A5%E4%BD%9C%E5%86%8D%E5%AD%A6%E4%B9%A0\blog\blog\source_posts\cv\Unity%E5%85%A5%E9%97%A8.assets\image-20250621163926416.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250621224357244.png">
 <meta property="article:published_time" content="2025-06-21T01:49:51.000Z">
-<meta property="article:modified_time" content="2025-06-21T02:18:04.804Z">
+<meta property="article:modified_time" content="2025-06-21T16:11:32.211Z">
 <meta property="article:author" content="Zhipeng Chen">
 <meta property="article:tag" content="游戏开发">
 <meta name="twitter:card" content="summary">
@@ -115,7 +118,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">Unity简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E7%BB%84%E6%88%90"><span class="nav-number">2.1.</span> <span class="nav-text">主要组成</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">Unity简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%93%E6%9C%89%E5%90%8D%E8%AF%8D"><span class="nav-number">2.1.</span> <span class="nav-text">专有名词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E7%BB%84%E6%88%90"><span class="nav-number">2.2.</span> <span class="nav-text">主要组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">2.2.1.</span> <span class="nav-text">编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sprite"><span class="nav-number">2.2.2.</span> <span class="nav-text">Sprite</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-Manager"><span class="nav-number">2.2.3.</span> <span class="nav-text">Input Manager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tilemaps-%E7%93%A6%E7%89%87%E5%9C%B0%E5%9B%BE"><span class="nav-number">2.2.4.</span> <span class="nav-text">Tilemaps - 瓦片地图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">2.3.</span> <span class="nav-text">C#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#controller"><span class="nav-number">2.3.1.</span> <span class="nav-text">controller</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -130,7 +133,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -218,9 +221,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-06-21 09:49:51 / 修改时间：10:18:04" itemprop="dateCreated datePublished" datetime="2025-06-21T09:49:51+08:00">2025-06-21</time>
+      <time title="创建时间：2025-06-21 09:49:51" itemprop="dateCreated datePublished" datetime="2025-06-21T09:49:51+08:00">2025-06-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-06-22 00:11:32" itemprop="dateModified" datetime="2025-06-22T00:11:32+08:00">2025-06-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -249,15 +258,48 @@
 <p>Unity官方有不少免费教程（或者收费教程也有），这里我将学这个入门 <a target="_blank" rel="noopener" href="https://learn.u3d.cn/tutorial/unity-ruby-adventure">Ruby’s Adventure：2D 初学者</a></p>
 <img src="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/843fc84b-ee81-447d-9155-b26c8aadb2c7______________27.png.400x0x1.webp" alt="img" />
 
-<h2 id="主要组成"><a href="#主要组成" class="headerlink" title="主要组成"></a>主要组成</h2><p><strong>编辑器</strong></p>
-<ul>
+
+
+<h2 id="专有名词"><a href="#专有名词" class="headerlink" title="专有名词"></a>专有名词</h2><ul>
+<li>Texture Type：纹理类型，比如Sprite(2D and UI)就是一种纹理类型</li>
+<li>Sprite：精灵，通常是一张图片经由Unity处理后得到的一个可绘制的对象</li>
+</ul>
+<h2 id="主要组成"><a href="#主要组成" class="headerlink" title="主要组成"></a>主要组成</h2><h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><ul>
 <li>Scene：实时的场景编辑器，支持拖拉拽。</li>
 <li>Hierarchy：与Scene联动，它将Scene中的所有游戏对象以目录树方式展现出来。</li>
 <li>Project：管理当前项目中的所有Resource，包括图像、音频、scene、C#脚本等。</li>
 <li>Console：看运行日志的地方。</li>
 <li>Game：可以理解为预览，玩家视角。</li>
 <li>Inspector：管理游戏对象、Resource等的属性的面板。</li>
-<li>Animator</li>
+<li>Animator：在这里编排动画</li>
+</ul>
+<h3 id="Sprite"><a href="#Sprite" class="headerlink" title="Sprite"></a>Sprite</h3><p><strong>精灵</strong>是在游戏中绘制的图像。<strong>Unity</strong> 无法使用你直接为 Ruby 导入的 <strong>.png 图像文件</strong>，而是需要将此文件转换为可使用的格式。</p>
+<p><img src="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250621105418651.png" alt="image-20250621105418651"></p>
+<p>精灵可以选择sprite mode，用single或者multiple（还有个polygon不知道是啥），选multiple的时候可以在Sprite Editor中自由裁剪图像而产生多个sprite</p>
+<h3 id="Input-Manager"><a href="#Input-Manager" class="headerlink" title="Input Manager"></a>Input Manager</h3><p>Unity帮忙封装了一下input，将键盘、鼠标、手柄等设备输入的信号封装成可以直接使用的UnityEngine.lnput对象。</p>
+<p>核心概念：</p>
+<ol>
+<li><p>输入轴(Input Axes)</p>
+<p> 将物理输入（如键盘按键、手柄摇杆）映射为逻辑上的“轴”，输出一个 <strong>[-1, 1] 范围内的值</strong>，渐进的</p>
+</li>
+<li><p>输入类型</p>
+<p> 按键 Key：键盘上的物理键，比如空格键、shift键</p>
+<p> 按钮 Button：手柄、触摸屏上的按键</p>
+<p> 鼠标&#x2F;摇杆轴 Mouse&#x2F;：连续输入</p>
+</li>
+</ol>
+<p><img src="E:\个人\卷起来\工作再学习\blog\blog\source_posts\cv\Unity入门.assets\image-20250621163926416.png" alt="image-20250621163926416"></p>
+<h3 id="Tilemaps-瓦片地图"><a href="#Tilemaps-瓦片地图" class="headerlink" title="Tilemaps - 瓦片地图"></a>Tilemaps - 瓦片地图</h3><p>世界设计。<strong>瓦片地图</strong>将世界作为一个网格，你可以在其中为每个网格单元格设置不同的<strong>精灵</strong>。</p>
+<p><img src="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250621224357244.png" alt="image-20250621224357244"></p>
+<h2 id="C"><a href="#C" class="headerlink" title="C#"></a>C#</h2><p>跟Java很类似，都是面向对象编程。</p>
+<h3 id="controller"><a href="#controller" class="headerlink" title="controller"></a>controller</h3><p>UnityEngine</p>
+<ul>
+<li>transform：对应游戏对象的Transform组件，可以控制对象的位置</li>
+</ul>
+<p>MonoBehaviour</p>
+<ul>
+<li>Start()：仅在首次调用Update方法前调用，是异步的吗？会不会出现Start跟Update一起执行的情况？</li>
+<li>Update()：每一帧都会调用</li>
 </ul>
 
     </div>
@@ -280,8 +322,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blog/2025/06/21/hello-world/" rel="next" title="Hello World">
-                  Hello World <i class="fa fa-chevron-right"></i>
+                <a href="/blog/2025/06/21/post/2025%E5%B9%B46%E6%9C%8821%E6%97%A5/" rel="next" title="傍晚时散步了">
+                  傍晚时散步了 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
