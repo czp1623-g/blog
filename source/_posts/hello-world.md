@@ -1,5 +1,6 @@
 ---
 title: Hello World
+date: 2023-04-02 18:48:08
 ---
 - *图片保存 [github](https://github.com/czp1623-g/PicBed/tree/pic)* 
 - *所用框架 [Hexo](https://hexo.io/zh-cn/)*
