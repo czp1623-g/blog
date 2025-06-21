@@ -20,7 +20,7 @@ categories:
 
 Unity官方有不少免费教程（或者收费教程也有），这里我将学这个入门 [Ruby's Adventure：2D 初学者](https://learn.u3d.cn/tutorial/unity-ruby-adventure)
 
-<img src="E:\个人\卷起来\工作再学习\blog\blog\source\_posts\cv\Unity入门.assets\843fc84b-ee81-447d-9155-b26c8aadb2c7______________27.png.400x0x1.webp" alt="img" />
+<img src="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/843fc84b-ee81-447d-9155-b26c8aadb2c7______________27.png.400x0x1.webp" alt="img" />
 
 ## 主要组成
 
