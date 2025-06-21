@@ -1,8 +1,14 @@
+---
+title: 学它丫的游戏引擎
+date: 2025-06-21 09:49:51
+categories:
+    - cv
+
+---
+
 # 前言
 
 做此笔记，记录一下Unity的学习过程，也算是一种变相的监督。
-
-
 
 # Unity简介
 
@@ -14,7 +20,7 @@
 
 Unity官方有不少免费教程（或者收费教程也有），这里我将学这个入门 [Ruby's Adventure：2D 初学者](https://learn.u3d.cn/tutorial/unity-ruby-adventure)
 
-![img](E:\个人\卷起来\工作再学习\blog\blog\source\_posts\cv\Unity入门.assets\843fc84b-ee81-447d-9155-b26c8aadb2c7______________27.png.400x0x1.webp)
+<img src="E:\个人\卷起来\工作再学习\blog\blog\source\_posts\cv\Unity入门.assets\843fc84b-ee81-447d-9155-b26c8aadb2c7______________27.png.400x0x1.webp" alt="img" />
 
 ## 主要组成
 
