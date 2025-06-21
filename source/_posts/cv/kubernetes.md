@@ -74,7 +74,37 @@ Kubernetes 会分步骤地将针对应用或其配置的更改上线，同时监
 sudo nohup k3s server --docker &
 # kill all
 sh /usr/local/bin/k3s-killall.sh
+# 进入容器
+kubectl exec -it <pod_name> -c <container_name> -- <command>
+k exec -it nginx-deployment-6d945c9c6b-b8b6z -c mynginx /bin/bash
+# /bin/sh
 
+# 在node节点上查看iptable配置
+sudo iptables -L -v -n -t nat
+
+
+```
+
+
+
+```shell
+# 如定义了三个pod，一个service抽象
+ % k get pods -o wide
+NAME                             READY   STATUS    RESTARTS   AGE   IP           NODE         NOMINATED NODE   READINESS GATES
+demo-deployment-866496cd-rnml9   1/1     Running   0          23m   10.42.0.11   zp-desktop   <none>           <none>
+demo-deployment-866496cd-td9q9   1/1     Running   0          23m   10.42.0.10   zp-desktop   <none>           <none>
+demo-deployment-866496cd-kxc6z   1/1     Running   0          23m   10.42.0.9    zp-desktop   <none>           <none>
+ % k get svc -o wide
+NAME           TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)                           AGE   SELECTOR
+demo-service   NodePort    10.43.217.37   <none>        30000:30001/TCP,30010:30011/TCP   21m   app=demo-app
+# iptables的chain如下
+Chain KUBE-SVC-63XIDVX3FQTFCQ6L (2 references)
+ pkts bytes target     prot opt in     out     source               destination
+    0     0 KUBE-MARK-MASQ  tcp  --  *      *      !10.42.0.0/16         10.43.217.37         /* default/demo-service:spring-svc cluster IP */ tcp dpt:30000
+    0     0 KUBE-SEP-YJLR2SS2M4E7KIG7  all  --  *      *       0.0.0.0/0            0.0.0.0/0            /* default/demo-service:spring-svc -> 10.42.0.10:6000 */ statistic mode random probability 0.33333333349
+    0     0 KUBE-SEP-664WUM5UBXGPHS7X  all  --  *      *       0.0.0.0/0            0.0.0.0/0            /* default/demo-service:spring-svc -> 10.42.0.11:6000 */ statistic mode random probability 0.50000000000
+    0     0 KUBE-SEP-2NKQLS73Z4PYUJBC  all  --  *      *       0.0.0.0/0            0.0.0.0/0            /* default/demo-service:spring-svc -> 10.42.0.9:6000 */
+# 后面跟着的小数表示：选择该pod的几率，按链条上的顺序一个个判断
 ```
 
 
@@ -84,6 +114,28 @@ sh /usr/local/bin/k3s-killall.sh
 https://www.guide2wsl.com/
 
 或见另外的post
+
+## k3s集群搭建
+
+```shell
+# 装好了master节点后
+# 查看k3s token
+sudo cat /var/lib/rancher/k3s/server/node-token
+# 新节点执行如下命令
+curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=K10f0babbc6cac44560f6e3271aa0af817910b1b61712a1fbde9dee4811026fbaa8::server:157a7f73685391377e14699136b1a121 INSTALL_K3S_EXEC="--docker" sh -
+# https://blog.csdn.net/weixin_43960618/article/details/108106020
+sudo vim /etc/systemd/system/multi-user.target.wants/k3s-agent.service
+# 修改ExecStart的值，加上 --docker启动参数
+sudo systemctl daemon-reload
+# restart
+service k3s-agent restart
+# 或者手动启动参考https://mmdjiji.com/2022/09/1201/
+# 或许要开通防护墙，sudo ufw allow from 192.168.31.22 to any port 6443 proto tcp
+k3s agent --server <K3s服务器地址>:<端口> --token <节点令牌>
+sudo /usr/local/bin/k3s agent --server https://192.168.31.22:6443 --token K10f0babbc6cac44560f6e3271aa0af817910b1b61712a1fbde9dee4811026fbaa8::server:157a7f73685391377e14699136b1a121 --docker
+```
+
+
 
 
 
@@ -122,6 +174,40 @@ docker build -t mynginx:v1 .
 ```shell
 # run
 docker run --name mynginx -p 8888:80 -d mynginx:v1
+```
+
+
+
+### k8s
+
+部署自己tag的nginx镜像，并挂载一个目录到node节点
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+      - name: mynginx
+        image: mynginx:v1
+          #imagePullPolicy: Never
+        volumeMounts:
+          - name: demo-storage
+            mountPath: /var/log/myapp
+      volumes:
+        - name: demo-storage
+          hostPath: # 挂载到所在node节点
+            path: /var/log/myapp/nginx
 ```
 
 
