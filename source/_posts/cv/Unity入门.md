@@ -76,7 +76,7 @@ Unity帮忙封装了一下input，将键盘、鼠标、手柄等设备输入的�
 
 
 
-![image-20250621163926416](E:\个人\卷起来\工作再学习\blog\blog\source\_posts\cv\Unity入门.assets\image-20250621163926416.png)
+![image-20250621163926416](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250621163926416.png)
 
 
 
@@ -85,6 +85,46 @@ Unity帮忙封装了一下input，将键盘、鼠标、手柄等设备输入的�
 世界设计。**瓦片地图**将世界作为一个网格，你可以在其中为每个网格单元格设置不同的**精灵**。
 
 ![image-20250621224357244](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250621224357244.png)
+
+
+
+
+
+
+
+#### Tile Palette
+
+美taɪl 美ˈpælət
+
+瓦片调色板，一个可视化工具，管理瓦片，可以用它来绘制Tilemap。
+
+可以根据自己喜好，调整Tile Palette的布局（即绘制调色板，注意不是绘制tilemap）
+
+![image-20250623222000604](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250623222000604.png)
+
+
+
+### Order in Layer
+
+层显示优先级
+
+可以通过修改sprite renderer的该属性来控制game object的显示优先级，数值越大，优先级越高，与其他低优先级的game object重叠时覆盖在上方。
+
+**如果game object的layer order相同呢？**
+
+这时候根据Camera Settings来决定谁覆盖谁，比如下面配置是根据game object的y轴（垂直方向）来绘制，也就是谁y属性值更小，谁更应该在“前方”。
+
+![image-20250623230534960](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250623230534960.png)
+
+**那么问题又来了，这个y属性值怎么来的，它的参考系是？**
+
+有两种方案，一个是取sprite的center，另一个是取sprite的pivot（轴心）
+
+![image-20250623231130017](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250623231130017.png)
+
+pivot默认是取底部中心，当然也可以自定义pivot位置。通过sprite editor可以直接修改。
+
+![image-20250623231518484](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250623231518484.png)
 
 ## C#
 
