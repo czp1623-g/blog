@@ -126,6 +126,39 @@ pivot默认是取底部中心，当然也可以自定义pivot位置。通过spri
 
 ![image-20250623231518484](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250623231518484.png)
 
+
+
+### 预制件
+
+Game Object也可以拖到Assets里，作为预制件。即一个Game Object模板，可以快速创建同类型的对象。
+
+如果需要批量修改，只需要编辑这个预制件就行！所有Game Object会一起更改！
+
+比如我修改了预制件的scale，三个Game Object都一起变肥了。
+
+![image-20250625220724604](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250625220724604.png)
+
+
+
+### 物理系统
+
+**Rigidbody** 
+
+- Mass 质量
+- gravity 重力
+- Linear Drag 线性阻力（空气阻力），直线运动阻力
+- Angular Drag 角阻力，旋转运动阻力
+
+**Box Collider 2D**
+
+定义一个长方形碰撞器，刚体！
+
+也可以设置Is Trigger，碰撞时只产生事件不产生碰撞效果，以此达到陷阱效果。
+
+甚至连Tilemap也可以添加Box Collider！
+
+
+
 ## C#
 
 跟Java很类似，都是面向对象编程。
