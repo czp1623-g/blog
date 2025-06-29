@@ -173,4 +173,12 @@ MonoBehaviour
 
 - Start()：仅在首次调用Update方法前调用，是异步的吗？会不会出现Start跟Update一起执行的情况？
 - Update()：每一帧都会调用
+- FixedUpdate()：调用的时间频率是固定的（默认0.02秒一次），独立于帧率。
 
+
+
+### 对象销毁
+
+Destroy方法
+
+![image-20250629224347006](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250629224347006.png)
