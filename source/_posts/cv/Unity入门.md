@@ -159,9 +159,44 @@ Game Object也可以拖到Assets里，作为预制件。即一个Game Object模�
 
 
 
+### Animator
+
+用于控制Game Object的动画，给Game Object添加Animator组件后，可以让其获得动起来的能力。
+
+**关系**：Game Object → Animator Component → Animator Controller → Parameters & Blend Tree → Motion（Animation Clips） → 可以用Sprite制作由一帧帧图片组成的动画
+
+还可以在C#脚本中，获取animator组件对象，并且修改其定义的Parameters，以此控制动画。
+
+```csharp
+animator = GetComponent<Animator>();
+animator.SetFloat("move x", 0);
+```
+
+#### Parameter控制Blend Tree
+
+在Blend Tree（状态树）中，可以有多个Motion（运动），2D的Animation里有Pos X和Pos Y两个坐标，可以选取自定义的Parameter与之绑定，如下图：
+
+![image-20250702225913449](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250702225913449.png)
+
+#### 定义过渡（转变时机）
+
+可以在Animator中定义不同Blend Tree之间转换时的过渡动画，即下方白色的箭头线。
+
+![image-20250702230400666](E:\个人\卷起来\工作再学习\blog\blog\source\_posts\cv\Unity入门.assets\image-20250702230400666-1751468919739-1.png)
+
+比如C#中控制Game Object由Idle转变为Moving状态时，会经历一次Idle→Moving的过渡动画。
+
+或者直接在过渡动画中用Parameters设定Conditions，当满足条件时，会触发Blend Tree切换。如果Conditions是空，那应该会直接切换。
+
+![image-20250702230857044](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250702230857044.png)
+
+
+
 ## C#
 
 跟Java很类似，都是面向对象编程。
+
+public暴露的参数，除了基础类型的变量，也可以传入Game Object，比如给玩家sprite传入一个武器prefab，然后在脚本中就可以直接动态实例化该prefab了。
 
 ### controller
 
@@ -171,9 +206,11 @@ UnityEngine
 
 MonoBehaviour
 
-- Start()：仅在首次调用Update方法前调用，是异步的吗？会不会出现Start跟Update一起执行的情况？
+- Start()：仅在首次调用Update方法前调用。
+- Awake()：创建对象时会立即调用。
 - Update()：每一帧都会调用
 - FixedUpdate()：调用的时间频率是固定的（默认0.02秒一次），独立于帧率。
+- OnCollisionEnter2D：当此碰撞器/刚体开始接触时调用(仅限 2D 物理)
 
 
 
