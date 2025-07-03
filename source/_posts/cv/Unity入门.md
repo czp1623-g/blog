@@ -182,13 +182,29 @@ animator.SetFloat("move x", 0);
 
 可以在Animator中定义不同Blend Tree之间转换时的过渡动画，即下方白色的箭头线。
 
-![image-20250702230400666](E:\个人\卷起来\工作再学习\blog\blog\source\_posts\cv\Unity入门.assets\image-20250702230400666-1751468919739-1.png)
+![image-20250702230400666](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250702230400666-1751468919739-1.png)
 
 比如C#中控制Game Object由Idle转变为Moving状态时，会经历一次Idle→Moving的过渡动画。
 
 或者直接在过渡动画中用Parameters设定Conditions，当满足条件时，会触发Blend Tree切换。如果Conditions是空，那应该会直接切换。
 
 ![image-20250702230857044](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250702230857044.png)
+
+
+
+### Cinemachine
+
+普通的Camera对象是一个静态摄像机，如果需要镜头追随，则需要使用Cinemachine包。
+
+![image-20250703224439855](E:\个人\卷起来\工作再学习\blog\blog\source\_posts\cv\Unity入门.assets\image-20250703224439855.png)
+
+
+
+在Scene中添加新的Cinemachine后，会自动给Main Camera添加一个CinemachineBrain组件，并关联到Cinemachine对象。
+
+可以添加多个Cinemachine对象（其实都是virtual camera），然后设定其Status为Live或standby。
+
+Cinemachine可以设置边界（绑定一个Collider 2D对象），需要注意给它设置一个不会跟其他Game Object冲突的Layer层。
 
 
 
