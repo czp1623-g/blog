@@ -208,6 +208,22 @@ Cinemachine可以设置边界（绑定一个Collider 2D对象），需要注意�
 
 
 
+### Effects
+
+#### Particle System
+
+粒子系统，用于创建各种视觉效果，比如火、烟、雨、雪、魔法效果、爆炸等。本质是控制大量小粒子来创建复杂的动态视觉效果。
+
+particle system可以作为Game Object的一个子对象，然后该particle system的position会随着Game Object改变，同时也可以通过代码来控制particle system了。
+
+粒子效果控制：
+
+- 粒子运动方向、速度、数量，触发时机，是否循环等
+- 粒子的渐变：渐渐变大/小、变颜色、变透明度
+- 粒子的渲染方式：Billboard、Mesh等
+
+
+
 ## C#
 
 跟Java很类似，都是面向对象编程。
