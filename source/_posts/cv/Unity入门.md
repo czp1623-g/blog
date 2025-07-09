@@ -32,6 +32,16 @@ Unity官方有不少免费教程（或者收费教程也有），这里我将学
 
 
 
+## 快捷操作
+
+- 按住shift键时，可以按比例调整对象大小
+
+- 设计UI的锚点时，可以按住alt，然后选填满父对象
+
+    <img src="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250708215606638.png" alt="image-20250708215606638" style="zoom: 50%;" />
+
+
+
 ## 主要组成
 
 ### 编辑器
@@ -196,7 +206,7 @@ animator.SetFloat("move x", 0);
 
 普通的Camera对象是一个静态摄像机，如果需要镜头追随，则需要使用Cinemachine包。
 
-![image-20250703224439855](E:\个人\卷起来\工作再学习\blog\blog\source\_posts\cv\Unity入门.assets\image-20250703224439855.png)
+![image-20250703224439855](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250703224439855.png)
 
 
 
@@ -221,6 +231,30 @@ particle system可以作为Game Object的一个子对象，然后该particle sys
 - 粒子运动方向、速度、数量，触发时机，是否循环等
 - 粒子的渐变：渐渐变大/小、变颜色、变透明度
 - 粒子的渲染方式：Billboard、Mesh等
+
+
+
+### UI
+
+一般用于创建用户界面、HUD、对话框等内容。
+
+所有的UI元素必须是Canvas的子对象。
+
+#### Canvas
+
+渲染模式
+
+- Screen Space - Camera：性能一般，跟随相机
+- Screen Space - Overlay：绘制在屏幕最上层，性能好
+- World Space：3D，先不管
+
+EventSystem
+
+创建Canvas时会自动创建，用于处理UI事件，比如键鼠输入。
+
+#### Mask
+
+可以往Image对象里添加Mask组件，让它可以遮盖其它Image，接着添加脚本，控制实现血条变化。
 
 
 
@@ -251,3 +285,17 @@ MonoBehaviour
 Destroy方法
 
 ![image-20250629224347006](https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250629224347006.png)
+
+
+
+### 定义单例
+
+```csharp
+// 访问控制：
+// public get：允许外部代码读取这个实例。
+// private set：只有这个类内部可以设置实例的值（在Awake()中设置）。
+public static UIHealthBar instance { get; private set; }
+
+// 其他脚本可以直接通过UIHealthBar.instance访问
+```
+
