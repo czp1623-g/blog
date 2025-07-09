@@ -220,7 +220,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-07 07:40:55" itemprop="dateModified" datetime="2025-07-07T07:40:55+08:00">2025-07-07</time>
+      <time title="修改时间：2025-07-09 22:58:34" itemprop="dateModified" datetime="2025-07-09T22:58:34+08:00">2025-07-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -309,7 +309,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-07 07:40:55" itemprop="dateModified" datetime="2025-07-07T07:40:55+08:00">2025-07-07</time>
+      <time title="修改时间：2025-07-09 22:58:34" itemprop="dateModified" datetime="2025-07-09T22:58:34+08:00">2025-07-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -401,7 +401,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-07 07:40:55" itemprop="dateModified" datetime="2025-07-07T07:40:55+08:00">2025-07-07</time>
+      <time title="修改时间：2025-07-09 22:58:34" itemprop="dateModified" datetime="2025-07-09T22:58:34+08:00">2025-07-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -509,7 +509,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-07 07:40:55" itemprop="dateModified" datetime="2025-07-07T07:40:55+08:00">2025-07-07</time>
+      <time title="修改时间：2025-07-09 22:58:34" itemprop="dateModified" datetime="2025-07-09T22:58:34+08:00">2025-07-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -543,6 +543,12 @@
 <h2 id="专有名词"><a href="#专有名词" class="headerlink" title="专有名词"></a>专有名词</h2><ul>
 <li>Texture Type：纹理类型，比如Sprite(2D and UI)就是一种纹理类型</li>
 <li>Sprite：精灵，通常是一张图片经由Unity处理后得到的一个可绘制的对象</li>
+</ul>
+<h2 id="快捷操作"><a href="#快捷操作" class="headerlink" title="快捷操作"></a>快捷操作</h2><ul>
+<li><p>按住shift键时，可以按比例调整对象大小</p>
+</li>
+<li><p>设计UI的锚点时，可以按住alt，然后选填满父对象</p>
+  <img src="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250708215606638.png" alt="image-20250708215606638" style="zoom: 50%;" /></li>
 </ul>
 <h2 id="主要组成"><a href="#主要组成" class="headerlink" title="主要组成"></a>主要组成</h2><h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><ul>
 <li>Scene：实时的场景编辑器，支持拖拉拽。</li>
@@ -613,7 +619,7 @@
 <p>或者直接在过渡动画中用Parameters设定Conditions，当满足条件时，会触发Blend Tree切换。如果Conditions是空，那应该会直接切换。</p>
 <p><img src="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250702230857044.png" alt="image-20250702230857044"></p>
 <h3 id="Cinemachine"><a href="#Cinemachine" class="headerlink" title="Cinemachine"></a>Cinemachine</h3><p>普通的Camera对象是一个静态摄像机，如果需要镜头追随，则需要使用Cinemachine包。</p>
-<p><img src="E:\个人\卷起来\工作再学习\blog\blog\source_posts\cv\Unity入门.assets\image-20250703224439855.png" alt="image-20250703224439855"></p>
+<p><img src="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250703224439855.png" alt="image-20250703224439855"></p>
 <p>在Scene中添加新的Cinemachine后，会自动给Main Camera添加一个CinemachineBrain组件，并关联到Cinemachine对象。</p>
 <p>可以添加多个Cinemachine对象（其实都是virtual camera），然后设定其Status为Live或standby。</p>
 <p>Cinemachine可以设置边界（绑定一个Collider 2D对象），需要注意给它设置一个不会跟其他Game Object冲突的Layer层。</p>
@@ -625,6 +631,17 @@
 <li>粒子的渐变：渐渐变大&#x2F;小、变颜色、变透明度</li>
 <li>粒子的渲染方式：Billboard、Mesh等</li>
 </ul>
+<h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p>一般用于创建用户界面、HUD、对话框等内容。</p>
+<p>所有的UI元素必须是Canvas的子对象。</p>
+<h4 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h4><p>渲染模式</p>
+<ul>
+<li>Screen Space - Camera：性能一般，跟随相机</li>
+<li>Screen Space - Overlay：绘制在屏幕最上层，性能好</li>
+<li>World Space：3D，先不管</li>
+</ul>
+<p>EventSystem</p>
+<p>创建Canvas时会自动创建，用于处理UI事件，比如键鼠输入。</p>
+<h4 id="Mask"><a href="#Mask" class="headerlink" title="Mask"></a>Mask</h4><p>可以往Image对象里添加Mask组件，让它可以遮盖其它Image，接着添加脚本，控制实现血条变化。</p>
 <h2 id="C"><a href="#C" class="headerlink" title="C#"></a>C#</h2><p>跟Java很类似，都是面向对象编程。</p>
 <p>public暴露的参数，除了基础类型的变量，也可以传入Game Object，比如给玩家sprite传入一个武器prefab，然后在脚本中就可以直接动态实例化该prefab了。</p>
 <h3 id="controller"><a href="#controller" class="headerlink" title="controller"></a>controller</h3><p>UnityEngine</p>
@@ -641,6 +658,8 @@
 </ul>
 <h3 id="对象销毁"><a href="#对象销毁" class="headerlink" title="对象销毁"></a>对象销毁</h3><p>Destroy方法</p>
 <p><img src="https://raw.githubusercontent.com/czp1623-g/PicBed/pic/img/image-20250629224347006.png" alt="image-20250629224347006"></p>
+<h3 id="定义单例"><a href="#定义单例" class="headerlink" title="定义单例"></a>定义单例</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 访问控制：</span></span><br><span class="line"><span class="comment">// public get：允许外部代码读取这个实例。</span></span><br><span class="line"><span class="comment">// private set：只有这个类内部可以设置实例的值（在Awake()中设置）。</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> UIHealthBar instance &#123; <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 其他脚本可以直接通过UIHealthBar.instance访问</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -703,7 +722,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-07 07:40:55" itemprop="dateModified" datetime="2025-07-07T07:40:55+08:00">2025-07-07</time>
+      <time title="修改时间：2025-07-09 22:58:34" itemprop="dateModified" datetime="2025-07-09T22:58:34+08:00">2025-07-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -809,7 +828,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-07 07:40:55" itemprop="dateModified" datetime="2025-07-07T07:40:55+08:00">2025-07-07</time>
+      <time title="修改时间：2025-07-09 22:58:34" itemprop="dateModified" datetime="2025-07-09T22:58:34+08:00">2025-07-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -939,7 +958,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-07 07:40:55" itemprop="dateModified" datetime="2025-07-07T07:40:55+08:00">2025-07-07</time>
+      <time title="修改时间：2025-07-09 22:58:34" itemprop="dateModified" datetime="2025-07-09T22:58:34+08:00">2025-07-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1042,7 +1061,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-07 07:40:55" itemprop="dateModified" datetime="2025-07-07T07:40:55+08:00">2025-07-07</time>
+      <time title="修改时间：2025-07-09 22:58:34" itemprop="dateModified" datetime="2025-07-09T22:58:34+08:00">2025-07-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1195,7 +1214,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-07 07:40:55" itemprop="dateModified" datetime="2025-07-07T07:40:55+08:00">2025-07-07</time>
+      <time title="修改时间：2025-07-09 22:58:34" itemprop="dateModified" datetime="2025-07-09T22:58:34+08:00">2025-07-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1296,7 +1315,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-07-07 07:40:55" itemprop="dateModified" datetime="2025-07-07T07:40:55+08:00">2025-07-07</time>
+      <time title="修改时间：2025-07-09 22:58:34" itemprop="dateModified" datetime="2025-07-09T22:58:34+08:00">2025-07-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
